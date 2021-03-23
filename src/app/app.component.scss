@@ -1,0 +1,38 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+mat-sidenav-container {
+  height: 100%;
+  background-color: #fff;
+}
+
+mat-sidenav {
+  padding: 5px 0;
+}
+
+// mat-sidenav-content{
+// padding: 5px 20px;
+// }
+
+mat-sidenav {
+  background-color: #333333;
+  width: 60px;
+  color: #fff;
+}
+
+::ng-deep .mat-drawer-inner-container {
+  overflow: hidden !important;
+}
+
+@media (max-width: 480px) {
+  mat-sidenav-content {
+    padding: 0;
+  }
+
+  mat-sidenav {
+    width: 70%;
+  }
+}

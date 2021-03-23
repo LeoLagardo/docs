@@ -1,4 +1,4 @@
-<div class="container">
+<div class="login-container">
     <div class="image">
         <img src="assets/img/Group 235.png" alt="">
     </div>
@@ -11,11 +11,24 @@
             <h1>Welcome</h1>
         </div>
         <div class="form">
-            <form>
-                <mat-form-field appearance="fill">
-                    <mat-label>Email Address</mat-label>
-                    <input matInput placeholder="Email address">
-                </mat-form-field>
+            <form [formGroup]="loginForm" (ngSubmit)="onLogin(loginForm)">
+                <div class="flexCol">
+                    <input type="email" placeholder="Email address" formControlName="Contact_Email">
+                    <input type="password" placeholder="Password" formControlName="password">
+                    <div id="thirdRow" class="flexRow">
+                        <div id="rememberMe" class="flexRow">
+                            <input type="checkbox" name="remember me">
+                            Remember me
+                        </div>
+                        <span>Forgot Password ?</span>
+                    </div>
+                    <div class="logOut flexRow">
+                        <button mat-raised-button type="submit">
+                            Login
+                            <img src="assets/icons/logout-button 1.svg" alt="">
+                        </button>
+                    </div>
+                </div>
             </form>
         </div>
     </div>

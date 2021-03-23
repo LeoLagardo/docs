@@ -1,0 +1,32 @@
+<mat-nav-list>
+    <div class="nav-items">
+        <div class="top">
+            <a mat-list-item>
+                <img src="assets/icons/dashboard.svg" alt="">
+            </a>
+            <a mat-list-item routerLinkActive="list-item-active" routerLink="/document-list">
+                <img src="assets/icons/Group.svg" alt="">
+            </a>
+            <a mat-list-item>
+                <img src="assets/icons/business-report.svg" alt="">
+            </a>
+            <a mat-list-item>
+                <img src="assets/icons/settings.svg" alt="">
+            </a>
+        </div>
+        <div class="bottom">
+            <a mat-list-item>
+                <div>
+                    <img [ngStyle]="{'width': '27px'}" src="assets/icons/user 2.svg" alt="">
+                    <p>{{userName}}</p>
+                </div>
+            </a>
+            <a mat-list-item>
+                <div (click)="logOut()">
+                    <img [ngStyle]="{'width': '27px'}" src="assets/icons/logout-button 1.svg" alt="">
+                    <p>Logout</p>
+                </div>
+            </a>
+        </div>
+    </div>
+</mat-nav-list>

@@ -1,51 +1,120 @@
-.container {
-    width: 100%;
-    height: 100%;
-    display: flex;
+$ligthGrey: #7b7b7b;
 
-    .image {
-        position: relative;
-        width: 85%;
-        background-color: #F7FFFB;
+.login-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  color: #333;
 
-        img {
-            width: 70%;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
+  .image {
+    position: relative;
+    width: 85%;
+    background-color: #F7FFFB;
+
+    img {
+      width: 70%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
     }
-    .login {
-        width: 40%;
-        padding: 3rem;
-        margin: 10rem 0;
+  }
 
-        .heading {
-            .rectangles {
-                display: flex;
+  .login {
+    width: 40%;
+    padding: 3rem;
+    margin: 10rem 0;
 
-                #rectangle1 {
-                    width: 54px;
-                }
+    .heading {
+      .rectangles {
+        display: flex;
 
-                #rectangle2 {
-                    width: 10px;
-                }
-
-                #rectangle1, #rectangle2 {
-                    height: 6px;
-                    background: #21B371;
-                    margin-right: 3px;
-                }
-            }
-            h1 {
-                margin-top: 10px;
-                font-size: 30px;
-                font-weight: 500;
-                line-height: 37px;
-                letter-spacing: 0.06em;
-            }
+        #rectangle1 {
+          width: 54px;
         }
+
+        #rectangle2 {
+          width: 10px;
+        }
+
+        #rectangle1,
+        #rectangle2 {
+          height: 6px;
+          background: #21B371;
+          margin-right: 3px;
+        }
+      }
+
+      h1 {
+        margin-top: 10px;
+        font-size: 30px;
+        font-weight: 500;
+        line-height: 37px;
+        letter-spacing: 0.06em;
+      }
     }
+
+    .form {
+      margin-top: 25px;
+
+      input[type=password],
+      input[type=email] {
+        margin-top: 20px;
+        border-radius: 8px;
+        height: 40px;
+        width: 90%;
+        border: none;
+        box-shadow: 0px 4px 5px #afafaf;
+        padding: 7px 15px;
+        letter-spacing: 0.06em;
+
+        &:focus {
+          outline: none;
+        }
+      }
+
+      #thirdRow {
+        color: $ligthGrey;
+        margin-top: 30px;
+        width: 88%;
+        justify-content: space-between;
+
+        input[type=checkbox] {
+          margin-right: 10px;
+        }
+
+      }
+
+      .logOut {
+        margin-top: 30px;
+        width: 88%;
+        justify-content: flex-end;
+
+        button {
+          background-color: #21B371;
+          letter-spacing: 0.06em;
+          width: 170px;
+          height: 45px;
+          border-radius: 10px;
+          font-size: 21px;
+
+          img {
+            transform: rotate(180deg);
+            color: #fff;
+            width: 30px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.flexCol {
+  display: flex;
+  flex-direction: column;
+}
+
+.flexRow {
+  display: flex;
+  flex-direction: row;
 }

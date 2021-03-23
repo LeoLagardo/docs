@@ -1,0 +1,59 @@
+<mat-toolbar>
+    <div class="tool-bar">
+        <div>
+            <select name="filterBy" id="">
+                <option value="document_id">Document ID</option>
+                <option value="tenent">Tenent</option>
+            </select>
+            <input type="search" (input)="filter($event.target.value);">
+        </div>
+    </div>
+</mat-toolbar>
+
+<div class="table-container mt-5">
+    <ng-container *ngFor="let item of documentList">
+        <div class="item">
+            <div class="row">
+                <div class="col-sm-6">
+                    <span class="row text-secondary">Document ID</span>
+                    <span class="row font-weight-bold">{{item.Document_ID.Document_ID}}</span>
+                </div>
+                <div class="col-sm-2">
+                    <span class="row text-secondary">Created on</span>
+                    <span class="row font-weight-bold">{{item.createdAt | date: 'dd/MM/YYYY'}}</span>
+                </div>
+                <div class="col-sm-2">
+                    <span class="row text-secondary">Name</span>
+                    <span class="row font-weight-bold">{{item.Document_ID.First_Name}}</span>
+                </div>
+                <div class="col-sm-2">
+                    <span class="row text-secondary">Tenent</span>
+                    <span class="row font-weight-bold">{{item.Tenant_ID.Name}}</span>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-sm-6">
+                    <span class="row text-secondary">Scan ID</span>
+                    <span class="row font-weight-bold">{{item.Scan_ID}}</span>
+                </div>
+                <div class="col-sm-2">
+                    <span class="row text-secondary">Created time</span>
+                    <span class="row font-weight-bold">{{item.updatedAt | date: 'dd/MM/YYYY'}}</span>
+                </div>
+                <div class="col-sm-2">
+                    <span class="row text-secondary">Nationality</span>
+                    <span class="row font-weight-bold">{{item.Document_ID.Nationality}}</span>
+                </div>
+                <div class="col-sm-2">
+                    <span class="row text-secondary">Status</span>
+                    <span class="row result" [ngClass]="{
+                        'verified': item.scanResultStatus === 'Verified' || item.scanResultStatus === 'Submitted',
+                        'inprogress': item.scanResultStatus === 'Inprogress'
+                    }">
+                        {{item.scanResultStatus}}
+                    </span>
+                </div>
+            </div>
+        </div>
+    </ng-container>
+</div>
